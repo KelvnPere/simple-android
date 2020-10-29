@@ -18,6 +18,7 @@
     - Change reactive calls for registering a patient to synchronous ones
     - Accept the ongoing patient entry as a parameter to the register patient method
     - Remove deprecated `Optional` class usages
+- Bump appcompat -> 1.2.0
 
 ### Changes
 - Update translations: `kn-IN`, `ta-IN`, `bn-IN`, `ti`, `bn-BD`, `pa-IN`, `mr-IN`, `te-IN`, `hi-IN`
