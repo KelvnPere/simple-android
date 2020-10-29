@@ -250,6 +250,7 @@ dependencies {
   androidTestImplementation "androidx.test:runner:$versions.androidXTest"
   androidTestImplementation "androidx.test:rules:$versions.androidXTest"
   androidTestImplementation "androidx.test.ext:junit:$versions.androidXTestExt"
+  androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
 
   androidTestImplementation "com.google.truth:truth:$versions.truth"
   androidTestImplementation "com.github.blocoio:faker:$versions.faker"
