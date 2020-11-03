@@ -9,6 +9,7 @@
 
 ### Changes
 - Disabled running the app on rooted devices
+- Refill prescriptions in edit medicine screen
 
 ### Internal
 - [In Progress: 4 Nov 2020] Migrate app screens to use ViewBinding
