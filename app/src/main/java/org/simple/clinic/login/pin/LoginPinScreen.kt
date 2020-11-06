@@ -16,6 +16,7 @@ import org.simple.clinic.ReportAnalyticsEvents
 import org.simple.clinic.di.injector
 import org.simple.clinic.main.TheActivity
 import org.simple.clinic.mobius.MobiusDelegate
+import org.simple.clinic.navigation.goBackWithoutBackPressInterception
 import org.simple.clinic.security.pin.PinAuthenticated
 import org.simple.clinic.security.pin.verification.LoginPinServerVerificationMethod.UserData
 import org.simple.clinic.user.OngoingLoginEntry
@@ -137,7 +138,7 @@ class LoginPinScreen(context: Context, attrs: AttributeSet) : RelativeLayout(con
   }
 
   override fun goBackToRegistrationScreen() {
-    backstack.goBack()
+    backstack.goBackWithoutBackPressInterception()
   }
 
   override fun onBackEvent(): Boolean {

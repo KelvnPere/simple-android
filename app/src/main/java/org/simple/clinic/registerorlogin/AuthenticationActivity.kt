@@ -5,7 +5,6 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.zhuinden.simplestack.Backstack
-import com.zhuinden.simplestack.GlobalServices
 import com.zhuinden.simplestack.SimpleStateChanger
 import com.zhuinden.simplestack.StateChange
 import com.zhuinden.simplestack.navigator.Navigator
@@ -85,14 +84,12 @@ class AuthenticationActivity : AppCompatActivity(), SimpleStateChanger.Navigatio
     super.onCreate(savedInstanceState)
     delegate.onRestoreInstanceState(savedInstanceState)
 
-    val navigationServices = GlobalServices
-        .builder()
-        .addService("backpress", BackPressHandler(android.R.id.content, supportFragmentManager))
-        .build()
-
     Navigator
         .configure()
-        .setGlobalServices(navigationServices)
+        .setScopedServices { serviceBinder ->
+          val backPressHandler = BackPressHandler(android.R.id.content, supportFragmentManager)
+          serviceBinder.addService("backpress", backPressHandler)
+        }
         .setStateChanger(SimpleStateChanger(this))
         .install(this, findViewById(android.R.id.content), listOf(EmptyScreenKey()))
   }
